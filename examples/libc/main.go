@@ -30,7 +30,7 @@ func getSystemLibrary() string {
 }
 
 func main() {
-	libc, err := openLibrary(getSystemLibrary())
+	libc, err := purego.Dlopen(getSystemLibrary(), purego.RTLD_NOW|purego.RTLD_GLOBAL)
 	if err != nil {
 		panic(err)
 	}

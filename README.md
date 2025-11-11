@@ -68,6 +68,8 @@ func getSystemLibrary() string {
 		return "/usr/lib/libSystem.B.dylib"
 	case "linux":
 		return "libc.so.6"
+    case "windows":
+        return "msvcrt.dll"
 	default:
 		panic(fmt.Errorf("GOOS=%s is not supported", runtime.GOOS))
 	}
